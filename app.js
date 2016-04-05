@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
 
+app.get('/', function(req, res) {
+    res.send('Enter a UTC or Date string in the URL.<br>EX: www.example.com/November 5, 1955');
+});
+
 app.get('/:timestamp', function(req, res) {
     
     var time = new Date(req.params.timestamp);
